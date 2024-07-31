@@ -2,6 +2,7 @@
 import AppCard from './AppCard.vue';
 import { store } from '../store.js';
 import AppCounterCard from './AppCounterCard.vue';
+import AppLoader from './AppLoader.vue';
 
 export default {
     data() {
@@ -11,7 +12,8 @@ export default {
     },
     components: {
         AppCard,
-        AppCounterCard
+        AppCounterCard,
+        AppLoader
     }
 }
 </script>
@@ -29,8 +31,10 @@ export default {
             <div class="foundCounter p-3 text-light">
                 Found <AppCounterCard /> cards
             </div>
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 gx-3">
-                
+            <div class="row justify-content-center mt-5" v-if="store.cardList.length < 20">
+                <AppLoader />
+            </div>
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 gx-3" v-else>
                 <AppCard v-for="card in store.cardList" :key="card.id" :card="card"/>
 
                 <!-- <div class="col d-flex justify-content-center mb-3 " v-for="card in store.cardList" :key="card.id">
