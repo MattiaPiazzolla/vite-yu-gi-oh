@@ -28,10 +28,12 @@ export default{
 </script>
 
 <template>
-  <div>
+  <header>
     <AppHeader />
+  </header>
+  <main>
     <AppMain />
-  </div>
+  </main>
 </template>
 
 <style lang="scss">
