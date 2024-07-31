@@ -1,6 +1,7 @@
 <script>
 import AppCard from './AppCard.vue';
 import { store } from '../store.js';
+import AppCounterCard from './AppCounterCard.vue';
 
 export default {
     data() {
@@ -9,13 +10,13 @@ export default {
         }
     },
     components: {
-        AppCard
+        AppCard,
+        AppCounterCard
     }
 }
 </script>
 
 <template>
-    <AppCard />
     <div class="container mt-4">
         <select name="archetype" id="" class="filterSelector">
             <option value="">-- Seleziona Tipo --</option>
@@ -26,10 +27,13 @@ export default {
         </select>
         <div class="mainContainer bg-light p-4 mt-4">
             <div class="foundCounter p-3 text-light">
-                Found XXXXX cards
+                Found <AppCounterCard /> cards
             </div>
             <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 gx-3">
-                <div class="col d-flex justify-content-center mb-3 " v-for="card in store.cardList" :key="card.id">
+                
+                <AppCard v-for="card in store.cardList" :key="card.id" :card="card"/>
+
+                <!-- <div class="col d-flex justify-content-center mb-3 " v-for="card in store.cardList" :key="card.id">
                     <div class="cardCustom">
                         <img :src="card.card_images[0].image_url" alt="Card Image">
                         <p class="mt-3 text-center text-light text-uppercase">
@@ -39,7 +43,8 @@ export default {
                             {{ card.archetype }}
                         </p>
                     </div>
-                </div>
+                </div> -->
+                
             </div>
         </div>
     </div>
