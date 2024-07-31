@@ -34,6 +34,6 @@ export default{
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import './styles/generals.scss'
 </style>
