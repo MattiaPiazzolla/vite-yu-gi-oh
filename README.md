@@ -12,7 +12,7 @@ _Documentazione_: https://ygoprodeck.com/api-guide/
 Numero di push minimo: 12
 
 SCOMPOSIZIONE DEL PROBLEMA
-1- Definisco la struttura dell'app principale
+1- Definisco la struttura dell'app principale  
 1.1 Installo tutti i pacchetti necessari
 1.2 Importo i pacchetti installati
 2- Creo tutte le componenti per ogni sezione
