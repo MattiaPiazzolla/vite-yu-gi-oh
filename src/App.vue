@@ -10,7 +10,8 @@ export default{
     AppMain,
   },
   created() {
-    this.getCardList()
+    this.getCardList(),
+    this.getCardType()
   },
   methods: {
     getCardList() {
@@ -21,7 +22,7 @@ export default{
     },
     getCardType() {
       axios.get(store.archetypesUrl).then((result) => {
-        store.cardList = result.data;
+        store.archetypes = result.data;
       })
     },
   },
