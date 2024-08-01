@@ -13,16 +13,18 @@ export default {
     components: {
         AppCard,
         AppCounterCard,
-        AppLoader
+        AppLoader,
     }
 }
 </script>
 
 <template>
     <div class="container mt-4">
-        <select name="archetype" id="" class="filterSelector">
-            <option value="">-- Seleziona Tipo --</option>
-            <option value="">Melodious</option>
+        <select name="archetype" id="" class="filterSelector" v-model="selectedArchetype" @change="$emit('filterChange')">
+            <option value="" selected>-- Seleziona Tipo --</option>
+            <option v-for="archetype in archetypes" :key="archetype.id" :value="archetype">
+                {{ archetype.name }}
+              </option>
             
         </select>
         <div class="mainContainer bg-light p-4 mt-4">

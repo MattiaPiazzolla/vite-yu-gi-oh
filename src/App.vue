@@ -15,10 +15,15 @@ export default{
   methods: {
     getCardList() {
       axios.get(store.apiUrl).then((result) => {
-        store.cardList = result.data.data
+        store.cardList = result.data.data;
         store.loading = false;
       })
-    }
+    },
+    getCardType() {
+      axios.get(store.archetypesUrl).then((result) => {
+        store.cardList = result.data;
+      })
+    },
   },
   data() {
     return {
