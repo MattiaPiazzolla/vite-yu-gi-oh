@@ -15,6 +15,9 @@ export default{
   },
   methods: {
     getCardList() {
+      if (store.selectedArchetype != ''){
+        store.apiUrl+=`&archetype=${store.selectedArchetype}`
+      }
       axios.get(store.apiUrl).then((result) => {
         store.cardList = result.data.data;
         store.loading = false;
@@ -26,7 +29,7 @@ export default{
       })
     },
     changeType(){
-      alert(store.selectedArchetype)
+      
     }
   },
   data() {
@@ -42,7 +45,7 @@ export default{
     <AppHeader />
   </header>
   <main>
-    <AppMain @filterChange="changeType"/>
+    <AppMain @filter="getCardList"/>
   </main>
 </template>
 

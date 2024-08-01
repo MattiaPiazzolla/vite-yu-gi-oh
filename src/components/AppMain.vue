@@ -11,6 +11,13 @@ export default {
             store
         }
     },
+    emits:['filter'],
+
+    methods: {
+        valueArche(){
+            this.$emit('filter')
+        }
+    },
     components: {
         AppCard,
         AppCounterCard,
@@ -22,7 +29,7 @@ export default {
 
 <template>
     <div class="container mt-4">
-        <select name="archetype" class="filterSelector" v-model="store.selectedArchetype" @change="$emit('filterChange')">
+        <select name="archetype" class="filterSelector" v-model="store.selectedArchetype" @change="valueArche()">
             <option value="" selected>-- Seleziona Tipo --</option>
             <AppTypeSelect v-for="archetype, index in store.archetypes" :key="index" :archetype="archetype"/>
 
