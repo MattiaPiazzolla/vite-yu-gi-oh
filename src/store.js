@@ -6,6 +6,5 @@ export const store = reactive({
     cardList: [],
     archetypes: [],
     selectedArchetype: "",
-
     loading: true,
 });

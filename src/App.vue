@@ -25,6 +25,9 @@ export default{
         store.archetypes = result.data.slice(0, 10);
       })
     },
+    changeType(){
+      alert(store.selectedArchetype)
+    }
   },
   data() {
     return {
@@ -39,7 +42,7 @@ export default{
     <AppHeader />
   </header>
   <main>
-    <AppMain />
+    <AppMain @filterChange="changeType"/>
   </main>
 </template>
 
