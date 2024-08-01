@@ -3,6 +3,7 @@ import AppCard from './AppCard.vue';
 import { store } from '../store.js';
 import AppCounterCard from './AppCounterCard.vue';
 import AppLoader from './AppLoader.vue';
+import AppTypeSelect from './AppTypeSelect.vue';
 
 export default {
     data() {
@@ -14,15 +15,18 @@ export default {
         AppCard,
         AppCounterCard,
         AppLoader,
+        AppTypeSelect,
     }
 }
 </script>
 
 <template>
     <div class="container mt-4">
-        <select name="archetype" id="" class="filterSelector" v-model="store.selectedArchetype" @change="$emit('filterChange')">
+        <select name="archetype" class="filterSelector" v-model="store.selectedArchetype" @change="$emit('filterChange')">
             <option value="" selected>-- Seleziona Tipo --</option>
-            <option v-for="archetype, index in store.archetypes" value="archetype.archetype_name" :key="index">{{ archetype.archetype_name }}</option>
+            <AppTypeSelect v-for="archetype, index in store.archetypes" :key="index" :archetype="archetype"/>
+
+            <!-- <option v-for="archetype, index in store.archetypes" value="archetype.archetype_name" :key="index">{{ archetype.archetype_name }}</option> -->
             
         </select>
         <div class="mainContainer bg-light p-4 mt-4">
