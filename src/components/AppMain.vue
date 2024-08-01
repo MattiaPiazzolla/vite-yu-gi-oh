@@ -22,7 +22,7 @@ export default {
     <div class="container mt-4">
         <select name="archetype" id="" class="filterSelector" v-model="store.selectedArchetype" @change="$emit('filterChange')">
             <option value="" selected>-- Seleziona Tipo --</option>
-            
+            <option v-for="archetype, index in store.archetypes" value="archetype.archetype_name" :key="index">{{ archetype.archetype_name }}</option>
             
         </select>
         <div class="mainContainer bg-light p-4 mt-4">

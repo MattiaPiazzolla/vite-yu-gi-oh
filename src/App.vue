@@ -22,7 +22,7 @@ export default{
     },
     getCardType() {
       axios.get(store.archetypesUrl).then((result) => {
-        store.archetypes = result.data;
+        store.archetypes = result.data.slice(0, 10);
       })
     },
   },
