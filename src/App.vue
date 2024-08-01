@@ -16,6 +16,7 @@ export default{
     getCardList() {
       axios.get(store.apiUrl).then((result) => {
         store.cardList = result.data.data
+        store.loading = false;
       })
     }
   },

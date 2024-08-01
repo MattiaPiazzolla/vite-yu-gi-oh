@@ -11,6 +11,18 @@ Creare un componente loader da visualizzare fintantoché i risultati non sono pr
 _Documentazione_: https://ygoprodeck.com/api-guide/
 Numero di push minimo: 12
 
+Giorno 2
+_Descrizione:_
+Continuate a lavorare nella stessa repo di ieri e aggiungete una select per filtrare i risultati in base all’archetipo.
+Le option della select devono essere popolate dinamicamente chiamando questo endpoint dell'api:
+https://db.ygoprodeck.com/api/v7/archetypes.php
+Quando l'utente seleziona un valore dalla lista, viene effettuata una chiamata alle API con l'archetipo selezionato
+_Bonus:_
+Creare un componente che mostri il numero totale di risultati ottenuti.
+_Nota_:
+Per capire come comunicare alle API le carte dell'archetipo che volete, è necessario fare riferimento alla documentazione che trovate qui:
+https://ygoprodeck.com/api-guide/
+
 SCOMPOSIZIONE DEL PROBLEMA
 1- Definisco la struttura dell'app principale  
 1.1 Installo tutti i pacchetti necessari
@@ -22,3 +34,10 @@ SCOMPOSIZIONE DEL PROBLEMA
 3.2. Definisco la struttura e lo stile per visualizzare i dettagli di ogni carta
 3.3. Definisco il componente per accettare un oggetto card come prop e visualizzare i dati della carta
 4- Definisco lo stile e la logica finale
+
+giorno 2
+
+1- Aggiorno lo store.js per gestire gli archetipi e le chiamate api filtrate
+1.2. Aggiungo la gestione dell'archetipo nella logica dell'app principale
+2- Aggiungo la struttura select per filtrare gli archetipi
+2.1 Creo una componente per inserire iil filtraggio degli archetipi in maniera dinamica

@@ -22,16 +22,14 @@ export default {
     <div class="container mt-4">
         <select name="archetype" id="" class="filterSelector">
             <option value="">-- Seleziona Tipo --</option>
-            <option value="1">Melodious</option>
-            <option value="2">Infernoble Arms</option>
-            <option value="3">Noble Knight</option>
-            <option value="4">Alien</option>    
+            <option value="">Melodious</option>
+            
         </select>
         <div class="mainContainer bg-light p-4 mt-4">
-            <div class="foundCounter p-3 text-light">
+            <div class="foundCounter p-3 text-light mt-4">
                 Found <AppCounterCard /> cards
             </div>
-            <div class="row justify-content-center mt-5" v-if="store.cardList.length < 20">
+            <div class="row justify-content-center mt-5" v-if="store.loading">
                 <AppLoader />
             </div>
             <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 gx-3" v-else>
