@@ -15,22 +15,29 @@ export default{
   },
   methods: {
     getCardList() {
-      if (store.selectedArchetype != ''){
-        store.apiUrl+=`&archetype=${store.selectedArchetype}`
-      }
-      axios.get(store.apiUrl).then((result) => {
+
+      if (store.selectedArchetype !== ''){
+
+        axios.get(`${store.apiUrl}&archetype=${store.selectedArchetype}`).then((result) => {
         store.cardList = result.data.data;
         store.loading = false;
       })
+
+
+      } else {
+        
+        axios.get(store.apiUrl).then((result) => {
+          store.cardList = result.data.data;
+          store.loading = false;
+        })
+      }
     },
     getCardType() {
       axios.get(store.archetypesUrl).then((result) => {
-        store.archetypes = result.data.slice(0, 10);
+        store.archetypes = result.data.slice(0, 15);
       })
     },
-    changeType(){
-      
-    }
+
   },
   data() {
     return {
